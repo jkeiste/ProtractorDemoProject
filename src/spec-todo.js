@@ -8,6 +8,10 @@ describe('Protractor Practice Exercises', function() {
 		element(by.css("input[type='checkbox']")).click();
         element(by.cssContainingText("[id='exampleFormControlSelect1'] option", "Female")).click();
         element.all(by.name("inlineRadioOptions")).first().click();
-		element(by.buttonText("Submit")).click();
+		element(by.buttonText("Submit")).click().then(function() {
+			element(by.css("div[class*='success']")).getText().then(function(text) {
+				console.log(text);
+			})
+		})
 	})
 })
