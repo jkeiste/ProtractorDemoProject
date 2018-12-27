@@ -12,6 +12,13 @@ describe('Protractor Practice Exercises', function() {
 			element(by.css("div[class*='success']")).getText().then(function(text) {
 				console.log(text);
 			})
+        })
+        //The following should be a second test with assertions on validation messaging
+        element(by.name("name")).clear();
+		element(by.name("name")).sendKeys("M").then(function() {
+			element(by.css("[class='alert alert-danger']")).getText().then(function(text) {
+				console.log(text);
+			})
 		})
 	})
 })
